@@ -85,6 +85,78 @@ header nav ul li a {
   font-size: 2rem;
 }
 
+
+/* Main Styles */
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: 
+    "about-me-heading about-me about-me about-me about-me about-me about-me"
+    "work-heading portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1"
+    "work-heading portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1"
+    "work-heading portfolio-2 portfolio-2 portfolio-2 portfolio-3 portfolio-3 portfolio-3"
+    "work-heading portfolio-4 portfolio-4 portfolio-4 portfolio-5 portfolio-5 portfolio-5"
+    "contact-me-heading phone-no email github twitter spotify";
+}
+
+#about-me-heading {
+  grid-template: about-me-heading;
+}
+
+#about-me-text {
+  grid-area: about-me;
+}
+
+#work-heading {
+  grid-area: work-heading;
+}
+
+#portfolio-1 {
+  grid-area: portfolio-1;
+}
+
+#portfolio-2 {
+  grid-area: portfolio-2;
+}
+
+#portfolio-3 {
+  grid-area: portfolio-3;
+}
+
+#portfolio-4 {
+  grid-area: portfolio-4;
+}
+
+#portfolio-5 {
+  grid-area: portfolio-5;
+}
+
+#contact-me-heading {
+  grid-area: contect-me-heading;
+}
+
+#phone-no {
+  grid-area: phone-no;
+}
+
+#email {
+  grid-area: email;
+}
+
+#github {
+  grid-area: github;
+}
+
+#twitter {
+  grid-area: twitter;
+}
+
+#spotify {
+  grid-area: spotify;
+}
+
 h1,
 h2,
 h3,
