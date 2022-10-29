@@ -148,7 +148,7 @@ header nav ul li a, .contact-info ul li a {
     "work-heading portfolio-1 portfolio-1"
     "work-heading portfolio-2 portfolio-3"
     "work-heading portfolio-4 portfolio-5";
-  gap: 20px;
+  gap: 10px;
   margin: 40px 0;
 }
 
@@ -174,7 +174,8 @@ header nav ul li a, .contact-info ul li a {
 }
 
 .bg-image:hover {
-  opacity: 1;
+  /* opacity: 1; */
+  filter: brightness(1);
   transition: 0.5s ease-in;
 }
 
@@ -194,7 +195,7 @@ header nav ul li a, .contact-info ul li a {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  opacity: 0.6;
+  filter: brightness(0.6);
   margin: 0;
 }
 
@@ -253,7 +254,7 @@ header nav ul li a, .contact-info ul li a {
   grid-template-rows: auto;
   grid-template-areas: 
     "contact-me-heading contact-info";
-  gap: 30px;
+  gap: 40px;
 }
 
 #contact-me-heading {
@@ -271,7 +272,7 @@ header nav ul li a, .contact-info ul li a {
   align-items: center;
   height: 100%;
   padding: 0;
-  margin: 0;S
+  margin: 0;
 }
 
 .contact-info ul li {
@@ -297,4 +298,66 @@ p {
   margin: 0;
 }
 
+@media (max-width: 1000px)  {
+
+  .hero-banner {
+    justify-content: center;
+  }
+
+  #about {
+    grid-template-columns: 4fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "about-me-heading"
+      "about-me-text";
+    gap: 0;
+    justify-content: flex-start;
+  }
+  
+  #about-me-heading, #work-heading, #contact-me-heading {
+    justify-self: start;
+    align-self: start;
+    font-size: 3rem;
+    word-wrap: no-wrap;
+    text-align: left;
+    color: var(--color-2);
+    border-bottom: 3px solid var(--color-2);
+    border-right: none;
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  #work {
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto 2fr 1fr 1fr;
+    grid-template-areas: 
+      "work-heading work-heading"
+      "portfolio-1 portfolio-1"
+      "portfolio-2 portfolio-3"
+      "portfolio-4 portfolio-5";
+    gap: 5px;
+    margin: 40px 0;
+  }
+
+  #contact {
+    grid-template-columns: 4fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+      "contact-me-heading"
+      "contact-info";
+    gap: 0;
+  }
+
+  .contact-info ul {
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .line-break {
+    display: none;
+  }
+
+}
 
