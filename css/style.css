@@ -89,34 +89,62 @@ header nav ul li a, .contact-info ul li a {
 /* Main Styles */
 
 .page-wrapper {
+  width: 90%;
+  margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-rows: auto 4fr 1fr;
   grid-template-areas: 
     "about"
     "work"
     "contact";
 }
 
+/* about section */
+
 #about {
   grid-area: about;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: 
+    "about-me-heading about-me-text";
+  gap: 40px;
 }
+
+#about-me-heading {
+  grid-area: about-me-heading;
+  justify-self: end;
+  align-self: start;
+  font-size: 3.5rem;
+  word-wrap: wrap;
+  text-align: right;
+  color: var(--color-2);
+  border-right: 3px solid var(--color-2);
+  padding: 0 10px;
+}
+
+#about-me-text {
+  grid-area: about-me-text;
+}
+
+#about-me-text p {
+  padding: 6px;
+  font-size: 0.8rem;
+}
+
+/* work section */
 
 #work {
   grid-area: work;
 }
 
+/* contact section */
+
 #contact {
   grid-area: contact;
 }
 
-#about-me-heading {
-  grid-area: about-me-heading;
-}
 
-#about-me-text {
-  grid-area: about-me;
-}
 /* 
 #work-heading {
   grid-area: work-heading;
