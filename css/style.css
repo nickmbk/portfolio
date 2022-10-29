@@ -93,11 +93,23 @@ header nav ul li a, .contact-info ul li a {
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 4fr 1fr;
+  grid-template-rows: auto 4fr auto;
   grid-template-areas: 
     "about"
     "work"
     "contact";
+}
+
+#about-me-heading, #work-heading, #contact-me-heading {
+  justify-self: end;
+  align-self: start;
+  font-size: 3.5rem;
+  word-wrap: wrap;
+  text-align: right;
+  color: var(--color-2);
+  border-right: 3px solid var(--color-2);
+  padding: 0 10px;
+  height: 100%;
 }
 
 /* about section */
@@ -113,14 +125,7 @@ header nav ul li a, .contact-info ul li a {
 
 #about-me-heading {
   grid-area: about-me-heading;
-  justify-self: end;
-  align-self: start;
-  font-size: 3.5rem;
-  word-wrap: wrap;
-  text-align: right;
-  color: var(--color-2);
-  border-right: 3px solid var(--color-2);
-  padding: 0 10px;
+  
 }
 
 #about-me-text {
@@ -136,7 +141,79 @@ header nav ul li a, .contact-info ul li a {
 
 #work {
   grid-area: work;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 2fr 1fr 1fr;
+  grid-template-areas: 
+    "work-heading portfolio-1 portfolio-1"
+    "work-heading portfolio-2 portfolio-3"
+    "work-heading portfolio-4 portfolio-5";
+  gap: 20px;
+  margin: 40px 0;
 }
+
+#work-heading {
+  grid-area: work-heading;
+}
+
+.project-card {
+  border: 3px solid var(--color-1);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+.project-tile {
+  background-color: var(--color-1);
+  margin-bottom: 20px;
+  padding: 8px;
+}
+
+.project-card-heading {
+  font-size: 1.5rem;
+  color: var(--color-2);
+}
+
+.project-card-tech {
+  font-size: 1rem;
+  color: var(--color-2);
+}
+
+#portfolio-1 {
+  grid-area: portfolio-1;
+  height: 50vh;
+  background-image: url("../images/02-portfolio-4.jpg");
+}
+
+#portfolio-2 {
+  grid-area: portfolio-2;
+  height: 25vh;
+  background-image: url("../images/02-portfolio-1.jpg");
+}
+
+#portfolio-3 {
+  grid-area: portfolio-3;
+  height: 25vh;
+  background-image: url("../images/02-portfolio-2.jpg");
+}
+
+#portfolio-4 {
+  grid-area: portfolio-4;
+  height: 25vh;
+  background-image: url("../images/02-portfolio-3.jpg");
+}
+
+#portfolio-5 {
+  grid-area: portfolio-5;
+  height: 25vh;
+  background-image: url("../images/02-run-buddy.jpg");
+}
+
+
+
 
 /* contact section */
 
@@ -145,32 +222,8 @@ header nav ul li a, .contact-info ul li a {
 }
 
 
-/* 
-#work-heading {
-  grid-area: work-heading;
-}
 
-#portfolio-1 {
-  grid-area: portfolio-1;
-}
-
-#portfolio-2 {
-  grid-area: portfolio-2;
-}
-
-#portfolio-3 {
-  grid-area: portfolio-3;
-}
-
-#portfolio-4 {
-  grid-area: portfolio-4;
-}
-
-#portfolio-5 {
-  grid-area: portfolio-5;
-}
-
-#contact-me-heading {
+/* #contact-me-heading {
   grid-area: contect-me-heading;
 }
 
