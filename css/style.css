@@ -49,12 +49,12 @@ header nav ul {
   padding-right: 75px;
 }
 
-header nav ul li {
+header nav ul li, .contact-info ul li {
   padding: 0 10px;
   border-bottom: 4px solid var(--color-1);
 }
 
-header nav ul li a {
+header nav ul li a, .contact-info ul li a {
   color: var(--color-1);
   text-decoration: none;
 }
@@ -90,25 +90,34 @@ header nav ul li a {
 
 .page-wrapper {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
   grid-template-areas: 
-    "about-me-heading about-me about-me about-me about-me about-me about-me"
-    "work-heading portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1"
-    "work-heading portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1 portfolio-1"
-    "work-heading portfolio-2 portfolio-2 portfolio-2 portfolio-3 portfolio-3 portfolio-3"
-    "work-heading portfolio-4 portfolio-4 portfolio-4 portfolio-5 portfolio-5 portfolio-5"
-    "contact-me-heading phone-no email github twitter spotify";
+    "about"
+    "work"
+    "contact";
+}
+
+#about {
+  grid-area: about;
+}
+
+#work {
+  grid-area: work;
+}
+
+#contact {
+  grid-area: contact;
 }
 
 #about-me-heading {
-  grid-template: about-me-heading;
+  grid-area: about-me-heading;
 }
 
 #about-me-text {
   grid-area: about-me;
 }
-
+/* 
 #work-heading {
   grid-area: work-heading;
 }
@@ -155,6 +164,12 @@ header nav ul li a {
 
 #spotify {
   grid-area: spotify;
+} */
+
+/* Contact Section Styles */
+.contact-info ul {
+  list-style-type: none;
+  font-size: 1.2rem;
 }
 
 h1,
