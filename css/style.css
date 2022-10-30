@@ -36,16 +36,30 @@ header {
   align-items: center;
 }
 
+header img {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 130px;
+  z-index: 10;
+  border-radius: 50%;
+}
+
 header h1 {
   background-color: var(--primary-color);
   color: var(--accent-color);
   margin: 10px 0;
-  padding-left: 75px;
+  padding-left: 130px;
   padding-right: 10px;
   font-size: 3rem;
+  position: relative;
 }
 
 /* Nav Styles */
+
+header nav {
+  padding-right: 75px;
+}
 
 header nav ul {
   list-style-type: none;
@@ -54,7 +68,7 @@ header nav ul {
   justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
-  padding-right: 75px;
+  position: relative;
 }
 
 header nav ul li, .contact-info ul li {
@@ -308,13 +322,24 @@ header nav ul li a, .contact-info ul li a {
     align-items: center;
     flex-wrap: nowrap;
     width: 100%;
+    height: 80px;
+  }
+
+  header img {
+    top: -20px;
+    left: -20px;
+    width: 100px;
   }
 
   header h1 {
     font-size: 1.5rem;
-    padding-left: 75px;
+    padding-left: 100px;
     padding-right: 10px;
     margin: 0;
+  }
+
+  header nav {
+    padding-right: 30px;
   }
 
   header nav ul {
@@ -386,7 +411,53 @@ header nav ul li a, .contact-info ul li a {
 
 }
 
-@media (max-width: 500px)  {
+@media (max-width: 740px) {
+
+  #about {
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "about-me-heading"
+      "about-me-text";
+    gap: 0;
+  }
+
+  #work {
+    grid-template-columns: 100%;
+    grid-template-rows: auto 2fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "work-heading"
+    "portfolio-1"
+    "portfolio-2"
+    "portfolio-3"
+    "portfolio-4"
+    "portfolio-5";
+    gap: 5px;
+    margin: 40px 0;
+  }
+
+
+  #contact {
+    grid-template-columns: auto;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: 
+      "contact-me-heading"
+      "contact-info"
+      "contact-info"
+      "contact-info"
+      "contact-info"
+      "contact-info"
+      "contact-info";
+    gap: 0;
+  }
+
+  .contact-info ul {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 500px) {
 
   header {
     flex-direction: column;
@@ -394,6 +465,13 @@ header nav ul li a, .contact-info ul li a {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
+    height: auto;
+  }
+
+  header img {
+    top: 100px;
+    left: 10px;
+    width: 100px;
   }
 
   header h1 {
@@ -401,6 +479,10 @@ header nav ul li a, .contact-info ul li a {
     width: 100%;
     padding: 0;
     margin: 0;
+  }
+
+  header nav {
+    padding: 0;
   }
 
   header nav ul {
@@ -434,7 +516,7 @@ header nav ul li a, .contact-info ul li a {
   }
 
 
-  #about {
+  /* #about {
     width: 100%;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
@@ -442,7 +524,7 @@ header nav ul li a, .contact-info ul li a {
       "about-me-heading"
       "about-me-text";
     gap: 0;
-  }
+  } */
 
   #work {
     grid-template-columns: 100%;
@@ -463,7 +545,7 @@ header nav ul li a, .contact-info ul li a {
     }
 
 
-    #contact {
+    /* #contact {
       grid-template-columns: auto;
       grid-template-rows: repeat(6, auto);
       grid-template-areas: 
@@ -475,7 +557,7 @@ header nav ul li a, .contact-info ul li a {
         "contact-info"
         "contact-info";
       gap: 0;
-    }
+    } */
 
     .contact-info ul {
       flex-direction: column;
