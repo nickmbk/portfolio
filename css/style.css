@@ -1,9 +1,14 @@
 :root {
-  --color-1: #92CCCE;
-  --color-2: #445877;
-  --color-3: #31343D;
-  --color-4: #00438887;
-  --main-background-color: #EDEEF7;
+  /* --primary-color: #92CCCE;
+  --text-color: #445877;
+  --accent-color: #31343D;
+  --hero-color: #00438887;
+  --main-background-color: #EDEEF7; */
+  --primary-color: #D56300;
+  --text-color: #57361A;
+  --accent-color: #572800;
+  --hero-color: #DD8A4287;
+  --main-background-color: #FFFFFF;
 }
 
 * {
@@ -24,7 +29,7 @@ body {
 /* Header Styles */
 
 header {
-  background-color: var(--color-3);
+  background-color: var(--accent-color);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -32,8 +37,8 @@ header {
 }
 
 header h1 {
-  background-color: var(--color-1);
-  color: var(--color-3);
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   margin: 10px 0;
   padding-left: 75px;
   padding-right: 10px;
@@ -54,18 +59,18 @@ header nav ul {
 
 header nav ul li, .contact-info ul li {
   padding: 0 10px;
-  border-bottom: 4px solid var(--color-1);
+  border-bottom: 4px solid var(--primary-color);
 }
 
 header nav ul li a, .contact-info ul li a {
-  color: var(--color-1);
+  color: var(--primary-color);
   text-decoration: none;
 }
 
 /* Hero Styles */
 
 .hero-banner {
-  background-color: var(--color-2);
+  background-color: var(--text-color);
   height: 15vh;
   position: relative;
 }
@@ -74,14 +79,14 @@ header nav ul li a, .contact-info ul li a {
   position: absolute;
   bottom: 0px;
   right: 0;
-  background-color: var(--color-1);
+  background-color: var(--primary-color);
   margin-right: 75px;
   margin-bottom: 30px;
   padding: 0 10px;
 }
 
 #subtitle h2 {
-  color: var(--color-3);
+  color: var(--accent-color);
   font-size: 2rem;
 }
 
@@ -95,7 +100,7 @@ header nav ul li a, .contact-info ul li a {
   margin: 0;
   /* This tip taken from a stackoverflow post, to get color over the top of the background image
   https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
-  box-shadow: inset 0 0 0 1000px var(--color-4);
+  box-shadow: inset 0 0 0 1000px var(--hero-color);
 }
 
 
@@ -119,8 +124,8 @@ header nav ul li a, .contact-info ul li a {
   font-size: 3.5rem;
   word-wrap: wrap;
   text-align: right;
-  color: var(--color-2);
-  border-right: 3px solid var(--color-2);
+  color: var(--text-color);
+  border-right: 3px solid var(--text-color);
   padding: 0 10px;
   height: 100%;
 }
@@ -130,7 +135,7 @@ header nav ul li a, .contact-info ul li a {
 #about {
   grid-area: about;
   display: grid;
-  grid-template-columns: 1.25fr 4fr;
+  grid-template-columns: 1.1fr 4fr;
   grid-template-areas: 
     "about-me-heading about-me-text";
   gap: 40px;
@@ -155,7 +160,7 @@ header nav ul li a, .contact-info ul li a {
 #work {
   grid-area: work;
   display: grid;
-  grid-template-columns: 1.25fr 2fr 2fr;
+  grid-template-columns: 1.1fr 2fr 2fr;
   grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas: 
     "work-heading portfolio-1 portfolio-1"
@@ -170,12 +175,12 @@ header nav ul li a, .contact-info ul li a {
 }
 
 .project-card {
-  border: 3px solid var(--color-1);
+  border: 3px solid var(--primary-color);
   position: relative;
 }
 
 .project-tile {
-  background-color: var(--color-1);
+  background-color: var(--primary-color);
   padding: 8px;
   z-index: 10;
   position: absolute;
@@ -191,12 +196,12 @@ header nav ul li a, .contact-info ul li a {
 
 .project-card-heading {
   font-size: 1.5rem;
-  color: var(--color-2);
+  color: var(--text-color);
 }
 
 .project-card-tech {
   font-size: 1rem;
-  color: var(--color-2);
+  color: var(--text-color);
 }
 
 .bg-image {
@@ -260,7 +265,7 @@ header nav ul li a, .contact-info ul li a {
 #contact {
   grid-area: contact;
   display: grid;
-  grid-template-columns: 1.25fr 4fr;
+  grid-template-columns: 1.1fr 4fr;
   grid-template-rows: auto;
   grid-template-areas: 
     "contact-me-heading contact-info";
@@ -287,11 +292,11 @@ header nav ul li a, .contact-info ul li a {
 
 .contact-info ul li {
   padding: 0 10px;
-  border-bottom: 4px solid var(--color-2);
+  border-bottom: 4px solid var(--text-color);
 }
 
 .contact-info ul li a {
-  color: var(--color-2);
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -340,8 +345,8 @@ header nav ul li a, .contact-info ul li a {
     align-self: start;
     font-size: 3rem;
     text-align: left;
-    color: var(--color-2);
-    border-bottom: 3px solid var(--color-2);
+    color: var(--text-color);
+    border-bottom: 3px solid var(--text-color);
     border-right: none;
     height: auto;
     margin-bottom: 20px;
@@ -394,6 +399,8 @@ header nav ul li a, .contact-info ul li a {
   header h1 {
     font-size: 1.5rem;
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   header nav ul {
@@ -417,7 +424,7 @@ header nav ul li a, .contact-info ul li a {
     position: absolute;
     bottom: 10px;
     right: 40px;
-    background-color: var(--color-1);
+    background-color: var(--primary-color);
     margin: 0;
     padding: 0 10px;
   }
