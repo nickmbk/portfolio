@@ -1,5 +1,6 @@
 :root {
-  /* --primary-color: #92CCCE;
+  /* original color scheme
+  --primary-color: #92CCCE;
   --text-color: #445877;
   --accent-color: #31343D;
   --hero-color: #00438887;
@@ -31,17 +32,20 @@ body {
 header {
   background-color: var(--accent-color);
   width: 100%;
+  /* used flexbox to easily control the element inside */
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 header img {
+  /* using absolute positioning to keep the image in the corner */
   position: absolute;
   top: -30px;
   left: -30px;
   width: 130px;
   z-index: 10;
+  /* border-radius to make the image a circle */
   border-radius: 50%;
 }
 
@@ -52,7 +56,6 @@ header h1 {
   padding-left: 130px;
   padding-right: 10px;
   font-size: 3rem;
-  position: relative;
 }
 
 /* Nav Styles */
@@ -68,7 +71,6 @@ header nav ul {
   justify-content: flex-end;
   align-items: center;
   gap: 1.5rem;
-  position: relative;
 }
 
 header nav ul li, .contact-info ul li {
@@ -76,7 +78,7 @@ header nav ul li, .contact-info ul li {
   border-bottom: 4px solid var(--primary-color);
 }
 
-header nav ul li a, .contact-info ul li a {
+header nav ul li a {
   color: var(--primary-color);
   text-decoration: none;
 }
@@ -85,14 +87,15 @@ header nav ul li a, .contact-info ul li a {
 
 .hero-banner {
   background-color: var(--text-color);
-  height: 15vh;
+  height: 20vh;
+  /* set to relative positioning so that when I set the subtitle id to absolute the 0 numbers will set from the edges of this element not the page */
   position: relative;
 }
 
 #subtitle {
   position: absolute;
-  bottom: 0px;
   right: 0;
+  bottom: 0;
   background-color: var(--primary-color);
   margin-right: 75px;
   margin-bottom: 30px;
@@ -110,19 +113,19 @@ header nav ul li a, .contact-info ul li a {
   background-image: url("../images/02-hero-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  /* position: relative; */
   margin: 0;
   /* This tip taken from a stackoverflow post, to get color over the top of the background image
   https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
   box-shadow: inset 0 0 0 1000px var(--hero-color);
 }
 
-
 /* Main Styles */
 
 .page-wrapper {
   width: 90%;
   margin: 20px auto;
+  /* Used grid for the main section of the page as it would be easier to control with all the element sthat would be inside it, as well as using nested grids within each section */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 4fr auto;
@@ -136,7 +139,6 @@ header nav ul li a, .contact-info ul li a {
   justify-self: end;
   align-self: start;
   font-size: 3.5rem;
-  word-wrap: wrap;
   text-align: right;
   color: var(--text-color);
   border-right: 3px solid var(--text-color);
@@ -190,6 +192,7 @@ header nav ul li a, .contact-info ul li a {
 
 .project-card {
   border: 3px solid var(--primary-color);
+  /* set to relative so that the absolute position of .project-tile will set from the edges of .project-card rather than the page */
   position: relative;
 }
 
@@ -203,9 +206,16 @@ header nav ul li a, .contact-info ul li a {
 }
 
 .bg-image:hover {
-  /* opacity: 1; */
+  /* changed brightness so that hover would affect it, tried to use opacity but didn't look as it should in the example photo */
   filter: brightness(1);
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.bg-image {
+  /* this allows the hover effect to fade back out when moving the mouse off of the image
+  tip taken from stackoverflow post https://stackoverflow.com/questions/10995165/what-is-the-opposite-of-hover-on-mouse-leave */
+  filter: brightness(0.6);
+  transition: 1s;
 }
 
 .project-card-heading {
@@ -223,7 +233,6 @@ header nav ul li a, .contact-info ul li a {
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   filter: brightness(0.6);
   margin: 0;
 }
@@ -231,7 +240,6 @@ header nav ul li a, .contact-info ul li a {
 #portfolio-1 {
   grid-area: portfolio-1;
   height: 50vh;
-  position: relative;
 }
 
 #portfolio-1-bg-image {
@@ -314,8 +322,8 @@ header nav ul li a, .contact-info ul li a {
   text-decoration: none;
 }
 
-
 @media (max-width: 1200px)  {
+  /* set the first breakpoint ro 1200px as noticed this was the first point in the browser where content wasn't resizing */
 
   header {
     justify-content: space-between;
@@ -326,12 +334,14 @@ header nav ul li a, .contact-info ul li a {
   }
 
   header img {
+    /* resize image for smaller screen */
     top: -20px;
     left: -20px;
     width: 100px;
   }
 
   header h1 {
+    /* resize h1 for smaller screen */
     font-size: 1.5rem;
     padding-left: 100px;
     padding-right: 10px;
@@ -352,7 +362,7 @@ header nav ul li a, .contact-info ul li a {
   }
 
   .hero-banner {
-    justify-content: center;
+    height: 20vh;
   }
 
   #about {
@@ -362,7 +372,6 @@ header nav ul li a, .contact-info ul li a {
       "about-me-heading"
       "about-me-text";
     gap: 0;
-    justify-content: flex-start;
   }
   
   #about-me-heading, #work-heading, #contact-me-heading {
@@ -413,6 +422,7 @@ header nav ul li a, .contact-info ul li a {
 
 @media (max-width: 740px) {
 
+  /* next breakpoint introduced due to content not resizing */
   #about {
     width: 100%;
     grid-template-columns: auto;
@@ -454,10 +464,13 @@ header nav ul li a, .contact-info ul li a {
 
   .contact-info ul {
     flex-wrap: wrap;
+    justify-content: flex-start;
   }
 }
 
 @media (max-width: 500px) {
+
+  /* breakpoint for mobile phones */
 
   header {
     flex-direction: column;
@@ -478,7 +491,6 @@ header nav ul li a, .contact-info ul li a {
     font-size: 1.5rem;
     width: 100%;
     padding: 0;
-    margin: 0;
   }
 
   header nav {
@@ -503,28 +515,16 @@ header nav ul li a, .contact-info ul li a {
   }
 
   #subtitle {
-    position: absolute;
     bottom: 10px;
+    left: 40px;
     right: 40px;
-    background-color: var(--primary-color);
     margin: 0;
-    padding: 0 10px;
+    text-align: center;
   }
 
   #about-me-heading, #work-heading, #contact-me-heading {
     font-size: 1.5rem;
   }
-
-
-  /* #about {
-    width: 100%;
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-      "about-me-heading"
-      "about-me-text";
-    gap: 0;
-  } */
 
   #work {
     grid-template-columns: 100%;
@@ -543,21 +543,6 @@ header nav ul li a, .contact-info ul li a {
     #portfolio-1, #portfolio-2, #portfolio-3, #portfolio-4, #portfolio-5  {
       height: 150px;
     }
-
-
-    /* #contact {
-      grid-template-columns: auto;
-      grid-template-rows: repeat(6, auto);
-      grid-template-areas: 
-        "contact-me-heading"
-        "contact-info"
-        "contact-info"
-        "contact-info"
-        "contact-info"
-        "contact-info"
-        "contact-info";
-      gap: 0;
-    } */
 
     .contact-info ul {
       flex-direction: column;

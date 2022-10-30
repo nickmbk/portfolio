@@ -12,6 +12,7 @@
 <body>
   <!-- main logo / nav -->
   <header>
+    <!-- added an avatar until I find or take a good photo -->
     <img src="./images/avatar.jpg" alt="Nick Misselbrook Avatar">
     <h1>Nick Misselbrook</h1>
     <nav>
@@ -19,6 +20,7 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#contact">Contact Me</a></li>
+        <!-- resume link doesn't work yet as I need to create an online resume -->
         <li><a href="#">Resume</a></li>
       </ul>
     </nav>
@@ -26,16 +28,18 @@
 
   <!-- hero banner -->
   <section class="hero-banner">
+    <!-- created a div to contain the background image so that I can manipulat ethe image without affecting content within the rest of the hero banner -->
     <div id="hero-bg-image">
     </div>
     <div id="subtitle">
-      <h2>Cool subtitle here!</h2>
+      <h2>Junior Web Developer</h2>
     </div>
   </section>
 
   <main class="page-wrapper">
     <!-- about me -->
     <section class="page-section" id="about">
+      <!-- inserted a line break so that the words will split lines when I need them to, can control in css by giving it a class name -->
       <h2 id="about-me-heading">About <br class="line-break" />Me</h2>
       <div id="about-me-text">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo numquam sint ipsam molestiae quibusdam dignissimos consequuntur ipsum asperiores corrupti necessitatibus excepturi mollitia, placeat perferendis saepe laudantium accusantium autem aliquid similique.</p>
@@ -46,7 +50,9 @@
     <!-- portfolio container -->
     <section class="page-section" id="work">
       <h2 id="work-heading">Work</h2>
+        <!-- created divs that can hold each portfolio project, along with the background images that I have given their own div like the hero above, so that I can manipulate the images however I want to without affecting the rest of the content -->
         <div class="project-card" id="portfolio-1">
+          <!-- made the background image the anchor -->
           <a href="#"><div id="portfolio-1-bg-image" class="bg-image"></div></a>
           <div class="project-tile">
             <h3 class="project-card-heading">Surf Report</h3>
@@ -89,9 +95,9 @@
       <div class="contact-info">
         <ul>
           <li id="phone-no"><a href="tel:555.555.555">555.555.555</a></li>
-          <li id="email"><a href="mailto:lernantino@website.com">lernantino@website.com</a></li>
-          <li id="github"><a href="https://www.github.com/">GitHub</a></li>
-          <li id="twitter"><a href="https://www.twitter.com/">Twitter</a></li>
+          <li id="email"><a href="mailto:nickmisselbrook@hotmail.co.uk">nickmisselbrook@hotmail.co.uk</a></li>
+          <li id="github"><a href="https://github.com/nickmbk">GitHub</a></li>
+          <li id="twitter"><a href="https://www.twitter.com/nickmbk">Twitter</a></li>
           <li id="spotify"><a href="https://www.spotify.com/">Spotify</a></li>
         </ul>
       </div>
