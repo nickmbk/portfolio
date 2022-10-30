@@ -2,6 +2,7 @@
   --color-1: #92CCCE;
   --color-2: #445877;
   --color-3: #31343D;
+  --color-4: #00438887;
   --main-background-color: #EDEEF7;
 }
 
@@ -62,27 +63,39 @@ header nav ul li a, .contact-info ul li a {
 /* Hero Styles */
 
 .hero-banner {
-  background-image: url("../images/02-hero-bg.jpg");
   background-color: var(--color-2);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 15vh;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  position: relative;
+  z-index: 1;
 }
 
-.hero-banner div {
+#subtitle {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
   background-color: var(--color-1);
   margin-right: 75px;
   margin-bottom: 30px;
   padding: 0 10px;
 }
 
-.hero-banner div h2 {
+#subtitle h2 {
   color: var(--color-3);
   font-size: 2rem;
+}
+
+#hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/02-hero-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  z-index: -1;
+  /* This tip taken from a stackoverflow post, to get color over the top of the background image
+  https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image */
+  box-shadow: inset 0 0 0 1000px var(--color-4);
 }
 
 
@@ -300,12 +313,20 @@ p {
 
 @media (max-width: 1000px)  {
 
+  header nav ul {
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding-right: 0;
+  }
+
   .hero-banner {
     justify-content: center;
   }
 
   #about {
-    grid-template-columns: 4fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 
       "about-me-heading"
@@ -318,7 +339,6 @@ p {
     justify-self: start;
     align-self: start;
     font-size: 3rem;
-    word-wrap: no-wrap;
     text-align: left;
     color: var(--color-2);
     border-bottom: 3px solid var(--color-2);
@@ -361,3 +381,33 @@ p {
 
 }
 
+@media (max-width: 480px)  {
+
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  header h1 {
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  header nav ul {
+    font-size: 1.3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding-right: 0;
+  }
+
+  #about-me-heading, #work-heading, #contact-me-heading {
+    font-size: 1.5rem;
+  }
+
+}
