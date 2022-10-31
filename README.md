@@ -33,7 +33,7 @@ as placeholders.  I will also add in a photo of myself at a later date.
 
 ##  Installation
 
-The portfolio can be found at http://
+The portfolio can be found at [Nick Misselbrook Portfolio](https://nickmbk.github.io/portfolio/)
 
 ## Usage
 
