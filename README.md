@@ -47,16 +47,22 @@ When I add my projects to this section, they will be clickable and take you to t
 
 You can find all my contact details in the Contact Me section at the bottom of the page.
 
+![Nick Misselbrook portfolio screenshot](./images/portfolio-screenshot.png)
+
 ## Credits
 
 Resources that I have used throughout this project have been:
 CSS Tricks guides to Flexbox and Grid
-[CSS Tricks - A Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-[CSS Tricks - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
-When I met a couple of issues I searched on Google and the solutions I found were in these Stack Overflow posts:
-[Use inset box-shadow to create a layer of color over picture - the first answer by BevansDesign](https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image)
-[Hover Effect to Fade Out when mouse leaves area - the answer by Hassan Mahmoud](https://stackoverflow.com/questions/10995165/what-is-the-opposite-of-hover-on-mouse-leave)
+- [CSS Tricks - A Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+- [CSS Tricks - A Complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+When I met a couple of issues I searched on Google and the solutions I used were in these Stack Overflow posts:
+
+- [Use inset box-shadow to create a layer of color over picture - the first answer by BevansDesign](https://stackoverflow.com/questions/9182978/semi-transparent-color-layer-over-background-image)
+
+- [Hover Effect to Fade Out when mouse leaves area - the answer by Hassan Mahmoud](https://stackoverflow.com/questions/10995165/what-is-the-opposite-of-hover-on-mouse-leave)
 
 ## License
 
